@@ -34,6 +34,32 @@ app.get("/api/products", async (req, res) => {
 });
 
 // Get a product by id
+app.get("/api/product/:id", async (req, res) => {
+  try {
+    const product = await Product.findById(req.params.id);
+    if (!product) {
+      res.status(500).json({ message: "Product not found" });
+    }
+    res.status(200).json(product);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+});
+
+// Update a product
+app.put("/api/product/:id", async (req, res) => {
+  try {
+    const product = await Product.findByIdAndUpdate(req.params.id, req.body);
+    if (!product) {
+      res.status(404).json({ message: "Product not found" });
+    }
+
+    const updatedProduct = await Product.findById(product);
+    res.status(200).json(updatedProduct);
+  } catch (error) {
+    res.status(500).json({ message: message.error });
+  }
+});
 
 mongoose
   .connect(mongodb_URL)
