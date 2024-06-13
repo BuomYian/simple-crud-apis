@@ -1,4 +1,4 @@
-# MERN CRUD API
+# SIMPLE CRUD APIs
 
 This repository contains a basic CRUD (Create, Read, Update, Delete) API built using the MERN stack (MongoDB, Express, React, Node.js). It provides endpoints for managing a collection of items (e.g., users, products, tasks) with typical CRUD operations.
 
@@ -24,8 +24,8 @@ This repository contains a basic CRUD (Create, Read, Update, Delete) API built u
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/yourusername/mern-crud-api.git
-   cd mern-crud-api
+   git clone https://github.com/BuomYian/simple-crud-apis.git
+   cd simple-crud-apis
    ```
 
 2. **Install server dependencies:**
@@ -76,40 +76,40 @@ The API provides the following endpoints:
 
 ### Example Requests
 
-- **Create a new item:**
+- **Create a new product:**
 
   ```bash
-  curl -X POST -H "Content-Type: application/json" -d '{"name": "Item1", "description": "This is item 1"}' http://localhost:5000/api/items
+  curl -X POST -H "Content-Type: application/json" -d '{"name": "product1", "description": "This is product 1"}' http://localhost:5000/api/products
   ```
 
-- **Get all items:**
+- **Get all products:**
 
   ```bash
-  curl http://localhost:5000/api/items
+  curl http://localhost:5000/api/products
   ```
 
-- **Get a single item by ID:**
+- **Get a single product by ID:**
 
   ```bash
-  curl http://localhost:5000/api/items/<item_id>
+  curl http://localhost:5000/api/products/<product_id>
   ```
 
-- **Update an item:**
+- **Update an product:**
 
   ```bash
-  curl -X PUT -H "Content-Type: application/json" -d '{"name": "Updated Item", "description": "Updated description"}' http://localhost:5000/api/items/<item_id>
+  curl -X PUT -H "Content-Type: application/json" -d '{"name": "Updated product", "description": "Updated description"}' http://localhost:5000/api/products/<product_id>
   ```
 
-- **Delete an item:**
+- **Delete an product:**
 
   ```bash
-  curl -X DELETE http://localhost:5000/api/items/<item_id>
+  curl -X DELETE http://localhost:5000/api/products/<product_id>
   ```
 
 ## Folder Structure
 
 ```
-mern-crud-api/
+simple-crud-apis/
 ├── client/                 # React front-end
 │   ├── public/
 │   └── src/
