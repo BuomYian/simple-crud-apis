@@ -7,6 +7,7 @@ dotenv.config(); // Load environment variables
 
 const app = express();
 app.use(express.json()); // Parse JSON bodies
+app.use(express.urlencoded({ extended: false }));
 const mongodb_URL = process.env.MONGO_URL;
 
 app.get("/", (req, res) => {
@@ -34,7 +35,7 @@ app.get("/api/products", async (req, res) => {
 });
 
 // Get a product by id
-app.get("/api/product/:id", async (req, res) => {
+app.get("/api/products/:id", async (req, res) => {
   try {
     const product = await Product.findById(req.params.id);
     if (!product) {
@@ -47,7 +48,7 @@ app.get("/api/product/:id", async (req, res) => {
 });
 
 // Update a product
-app.put("/api/product/:id", async (req, res) => {
+app.put("/api/products/:id", async (req, res) => {
   try {
     const product = await Product.findByIdAndUpdate(req.params.id, req.body);
     if (!product) {
@@ -62,7 +63,7 @@ app.put("/api/product/:id", async (req, res) => {
 });
 
 // Delete a product
-app.delete("/api/product/:id", async (req, res) => {
+app.delete("/api/products/:id", async (req, res) => {
   try {
     const { id } = req.params;
 
