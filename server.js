@@ -14,9 +14,10 @@ app.use(express.urlencoded({ extended: false }));
 // Routes
 app.use("/api/products", productRoute);
 
-app.get("/", (req, res) => {
-  res.send("Hello from Node API!");
-});
+// Testing
+// app.get("/", (req, res) => {
+//   res.send("Hello from Node API!");
+// });
 
 mongoose
   .connect(mongodb_URL)
